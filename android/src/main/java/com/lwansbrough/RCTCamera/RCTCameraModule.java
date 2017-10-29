@@ -292,6 +292,10 @@ public class RCTCameraModule extends ReactContextBaseJavaModule
         cm.fileFormat = MediaRecorder.OutputFormat.MPEG_4;
         mMediaRecorder.setProfile(cm);
 
+        // mMediaRecorder.setVideoFrameRate(20);
+        mMediaRecorder.setVideoEncodingBitRate(2000 * 1000);
+        mMediaRecorder.setAudioEncodingBitRate(128 * 1000);
+
         // Set video output file.
         mVideoFile = null;
         switch (options.getInt("target")) {
